@@ -1,5 +1,253 @@
-\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb,float}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{flexisym}
+\usepackage{color}
+\usepackage{breqn}
+\usepackage{rotating}
+\usepackage{tikz}
 \usepackage[utf8]{inputenc}
+\usepackage{tabularx, blkarray}
+\usepackage[linesnumbered,boxed]{algorithm2e}
+\newcommand\colhead[1]{\multicolumn{1}{>{$}c<{$}}{#1}}
+\usepackage{eqparbox}
+\usepackage{listings}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+\newcommand*{\captionsource}[2]{%
+  \caption[{#1}]{%
+    #1%
+    \\\hspace{\linewidth}%
+    \textbf{Source:} #2%
+  }%
+}
+
+\newcommand{\Rea}{{\Bbb R}}
+\newcommand{\Int}{{\Bbb Z}}
+\newcommand{\Rat}{{\Bbb Q}}
+\newcommand{\Cmp}{{\Bbb C}}
+\newcommand{\Nat}{{\Bbb N}}
+
+\setlength{\oddsidemargin}{.25in} \setlength{\evensidemargin}{.25in}
+\setlength{\textwidth}{6in} \setlength{\topmargin}{0.0in}
+\setlength{\textheight}{8.5in}
+
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{observation}{Observation}
+\newtheorem{fact}{Fact}
+
+\newenvironment{proof}{\noindent{\bf Proof:} \hspace*{1em}}{
+    \hspace*{\fill} $\Box$ }
+\newenvironment{proof_of}[1]{\noindent {\bf Proof of #1:}
+    \hspace*{1em} }{\hspace*{\fill} $\Box$ }
+\newenvironment{proof_claim}{\begin{quotation} \noindent}{
+    \hspace*{\fill} $\diamond$ \end{quotation}}
+
+
+\newcommand{\handout}[5]{
+   \renewcommand{\thepage}{#1-\arabic{page}}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{
+    \hbox to 5.78in { {\bf SYSEN 6000 Foundation of Complex Sys} \hfill #2 }
+       \vspace{4mm}
+       \hbox to 5.78in { {\Large \hfill #5  \hfill} }
+       \vspace{2mm}
+       \hbox to 5.78in { {\it #3 \hfill #4} }
+      }
+   }
+   \end{center}
+   \vspace*{4mm}
+}
+
+\newcommand{\Assignment}[4]{\handout{#1}{#2}{Assignment:
+#3}{Student: #4}{Assignment #1}}
+\newcommand{\problemset}[4]{\handout{#1}{#2}{}{Due Date: #4}{Problem Set #3}}
+\newcommand{\problemsetsoln}[3]{\handout{#1}{#2}{}{}{Problem Set #3 Solutions}}
+\newcommand{\exam}[3]{\handout{#1}{#2}{}{Due Date: #3}{Take-Home Final Exam}}
+\newcommand{\examsoln}[2]{\handout{#1}{#2}{}{}{Take-Home Final Exam Solutions}}
+
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\set}[1]{\{#1\}}
+
+
+\newcommand{\dpw}{}
+
+\newenvironment{alglist}{\begin{list}{}{\setlength{\leftmargin}{1.5cm}
+\setlength{\rightmargin}{0cm}\setlength{\itemsep}{1ex}\setlength{\parsep}{1ex}}}{\end{list}}
+
+\newcommand{\problem}[3]
+{\fbox{\parbox{6in}{{\bf #1}\begin{itemize}\item{\bf Input:} {#2} \item{\bf Goal:} {#3}\end{itemize}}}}
+
+
+
 \begin{document}
-(Type your content here.)
+
+%%%%%%%%%%%%%%%%%%%%%
+%	                 TITLE BOX
+%%%%%%%%%%%%%%%%%%%%%
+
+\Assignment{11}{April. 28, 2017}{\dpw}{Faisal Alkaabneh}
+
+%%%%%%%%%%%%%%%%%%%%%
+%	             First Section
+%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Problem 1}
+\textcolor{red}{A dynamical system of even greater simplicity that exhibits period doubling and chaos is the set of three first-order differential equations. Show that for $b = 2$, $c = 4$, and $0 < a < 2$, this system has two fixed points.}\\
+
+
+In order to find the fixed points, the three Rossler equations are set to zero and the ( ${\displaystyle x}, {\displaystyle y}, {\displaystyle z}$) coordinates of each fixed point were determined by solving the resulting equations. 
+
+
+Which in turn can be used to show the actual fixed points for a given set of parameter values:
+
+$${\displaystyle \left({\frac {c+{\sqrt {c^{2}-4ab}}}{2}},{\frac {-c-{\sqrt {c^{2}-4ab}}}{2a}},{\frac {c+{\sqrt {c^{2}-4ab}}}{2a}}\right)}$$
+$${\displaystyle \left({\frac {c-{\sqrt {c^{2}-4ab}}}{2}},{\frac {-c+{\sqrt {c^{2}-4ab}}}{2a}},{\frac {c-{\sqrt {c^{2}-4ab}}}{2a}}\right)}$$
+
+
+If the values of $b=2$ and $c=4$, then
+
+$${\displaystyle \left({\frac {4+{\sqrt {16-8a}}}{2}},{\frac {-4-{\sqrt {16-8a}}}{2a}},{\frac {4+{\sqrt {16-8a}}}{2a}}\right)}$$
+$${\displaystyle \left({\frac {4-{\sqrt {16-8a}}}{2}},{\frac {-4+{\sqrt {16-8a}}}{2a}},{\frac {4-{\sqrt {16-8a}}}{2a}}\right)}$$
+
+
+As you can see the system has two real value solutions if the values of $b=2$, $c=4$ and $0<a<2$; otherwise will run into imaginary parts or get a solutions of $\infty$ such as the case of $a = 0$ 
+
+
+\newpage
+
+
+\section{Question 2}
+\textcolor{red}{Use a small computer with numerical integration software (e.g., using a Runge-Kutta algorithm), choose $b = 2$, $c = 4$ for the Rossler attractor in problem 1-9, and explore the parameter regime $0.3 \leq a \leq 0.4$ and look for period doubling.}
+
+
+\vspace{0.2 in}
+
+I did several simulations of the system using MATLAB ode45 function. After conducting the experiments, I believe that when $a = 0.328$ the number of periods double.\\
+
+%\begin{figure}[H]
+%\begin{minipage}[t]{.48\textwidth}
+%\centering
+%\begin{subfigure}[b]{\linewidth}
+%\includegraphics[width=0.9\hsize]{a03.png}
+%    \caption{$a = 0.30$, period-1 orbit,}
+%\end{subfigure}\\
+%\begin{subfigure}[b]{\linewidth}
+%\includegraphics[width=0.9\hsize]{a031.png}
+%    \caption{$a=0.31$, period-1 orbit,}
+%\end{subfigure}\\
+%\begin{subfigure}[b]{\linewidth}
+%\includegraphics[width=0.9\hsize]{a033.png}
+%    \caption{$a=0.33$, period-2 orbit.}
+%\end{subfigure}
+
+%\caption{Varying $a<0.34$.}
+%\label{fig:testa}
+%\end{minipage}
+%    \hfill     
+%\begin{minipage}[t]{0.48\textwidth}
+%\begin{subfigure}[b]{\linewidth}
+%\includegraphics[width=0.9\hsize]{a035.png}
+%        \caption{$a=0.35$, period-2 orbit,}
+%\end{subfigure}\\
+%\begin{subfigure}[b]{\linewidth}
+%\includegraphics[width=0.9\hsize]{a036.png}
+%    \caption{$a = 0.36$,period-2 orbit,}
+%\end{subfigure}\\
+%\begin{subfigure}[b]{\linewidth}
+% \includegraphics[width=0.9\hsize]{a039.png}
+%        \caption{$a = 0.39$, chaotic attractor.}
+%\end{subfigure}
+%\caption{Varying $a>0.35$.}
+%\end{minipage}
+%    \end{figure}
+
+
+\newpage
+
+\section{Question 3}
+\textcolor{red}{Fractd Sponge. Consider a three-dimensional cube whose lengths are divided into thirds, thus creating a set of 27 subcubes. Imagine a laser cutting or chemical etching process that eliminates the central cubes on each of the faces as well as the central cube (i.e., drill three mutually orthogonal square holes). Show that iteration of this process will lead to a three-dimensional
+fractal object with box-counting dimension $d = \log 20/\log 3$.}\\
+
+\vspace{0.2 in}
+
+There are 8 cubes on the front face, $8$ cubes on the back, and then $4$ in between, making a total of $20$ cubes, so $N = 20$.\\
+
+Next, figure out the magnification or scaling factor, $r$. The length of each of the 1'st order cubes is $1/3$ of the length of the 0-order cube, so the magnification factor is $3$. Hence:
+$$d=\frac{\log (N)}{\log (r)}=\frac{\log (20)}{\log (3)}=2.7268$$
+
+
+
+
+\newpage
+
+\section{Question 4}
+\textcolor{red}{Fractal Coastlines. A now classic example of a physical manifestation of fractal geometry is the measurement of the length of coastlines on the Earth as described by Mandelbrot (1977) in his earlier book. The method is described briefly in this book in Section 7.7 [see Eqs. (7-7.6) and (7-7.7)].}\\
+
+\vspace{0.2 in}
+
+To carry out this example, I will select the map of Great Britain. I printed out the map of Great Britain and did five trials if measuring the length of the coastline. The first trial with large step length, each unit length is 250 km, the second trial 200 km, 150 km for the third trial, 100 km for the fourth trial and 50 km for the last one. The number of lines found in each trial is as follows: 10, 13, 18, 28, and 70 respectively. \\
+
+As shown in the figure I found the line, then I calculated the slop of this line to be as $-0.209062$. Then take the absolute value of this and add 1 – which gives a coastline dimension of $1.209$ for Britain's coast. \\
+
+%\begin{figure}[H]
+%\centering
+%    \includegraphics[width=400 pt]{loglog.png}
+%    \caption{Graph showing the relationship between the measured perimeter $\log(L(s))$ and %the magnification factor $\log(s)$.}
+%    \label{fig:Mat}
+%\end{figure}
+
+
+On the other hand I used a software to do the simulation and analysis and obtained a slop value of coastline dimension of $1.25$ for Britain – agreeing with other online sources.\\
+
+My calculation is not very reliable since I used five samples to plot the line as opposed to someone can do when using a software. In the software, the number of simulation trials was set to be 500 providing more accuracy. \\
+
+
+
+
+
+
+{\Large{\textbf{Sources}}}\\
+\begin{enumerate}
+\item[1] https://en.wikipedia.org/wiki/Coastline_paradox
+\item[2] https://ccl.northwestern.edu/netlogo/docs/3d.html
+\item[3] https://en.wikipedia.org/wiki/R\%C3\%B6ssler_attractor
+\end{enumerate}
+
+
+
+
+\vspace{0.5 in}
+
+
+
+
 \end{document}
