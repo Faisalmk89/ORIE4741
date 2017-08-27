@@ -75,7 +75,7 @@
    \begin{center}
    \framebox{
       \vbox{
-    \hbox to 5.78in { {\bf SYSEN 6000 Foundation of Complex Sys} \hfill #2 }
+    \hbox to 5.78in { {\bf ORIE 4741 Learning with Big Messy Data} \hfill #2 }
        \vspace{4mm}
        \hbox to 5.78in { {\Large \hfill #5  \hfill} }
        \vspace{2mm}
@@ -113,7 +113,7 @@
 %	                 TITLE BOX
 %%%%%%%%%%%%%%%%%%%%%
 
-\Assignment{11}{April. 28, 2017}{\dpw}{Faisal Alkaabneh}
+\Assignment{0}{Aug. 28, 2017}{\dpw}{Faisal Alkaabneh}
 
 %%%%%%%%%%%%%%%%%%%%%
 %	             First Section
@@ -121,7 +121,16 @@
 
 
 \section{Problem 1}
-\textcolor{red}{A dynamical system of even greater simplicity that exhibits period doubling and chaos is the set of three first-order differential equations. Show that for $b = 2$, $c = 4$, and $0 < a < 2$, this system has two fixed points.}\\
+\textcolor{red}{\textit{Formalizing} prediction problems.}\\
+
+\begin{itemize}
+\item \textit{Medical treatment planning:} The $\mathcal{Y}$ vector might be how much dose shall I give the patient, in that case it is continuous. On the other hand, if I am deciding which treatment, then the $\mathcal{Y}$ vector is discrete. Whereas for the $\mathcal{X}$ vector, some of the values such as age, height, or weight will be continuous and some other data will be binary such as smoker or non-smoker, sex or have allergies. Also, some of the $\mathcal{X}$ values will be ordinal such as stage of illness.
+\item \textit{Electoral campaigning:} The $\mathcal{Y}$ vector is clearly binary (i.e., yes/no). The $\mathcal{X}$ vector might be a vector with $n$ entries for each voters, each entry is a binary indicating whether the voter voted for certain party or not each year. For example if someone witnessed three elections so far and in the first two votes they voted to a different party and in the last vote they voted to our candidate's party, their vector will look like this $[0,0,1]$.
+\item \textit{Time series forecasting:} The $\mathcal{Y}$ vector is clearly continuous. The $\mathcal{X}$ vector might be a vector with mixed values. Some continuous values might be the performance of that stock lately; other binary entries might be did the company invested in new projects.
+\item \textit{Handwriting recognition:} In such case, both $\mathcal{Y}$ and $\mathcal{X}$ vectors are discrete.
+\item \textit{Class placement:} The $\mathcal{Y}$ vector is ordinal to determine the level of math class to place a student in. The $\mathcal{X}$ vector might be a continuous vector with entries proving grades of each subject.
+\item \textit{Pick your own problem:} The $\mathcal{Y}$ vector is ordinal to determine the level of math class to place a student in. The $\mathcal{X}$ vector might be a continuous vector with entries proving grades of each subject.
+\end{itemize}
 
 
 In order to find the fixed points, the three Rossler equations are set to zero and the ( ${\displaystyle x}, {\displaystyle y}, {\displaystyle z}$) coordinates of each fixed point were determined by solving the resulting equations. 
