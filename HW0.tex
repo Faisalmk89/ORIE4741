@@ -124,12 +124,12 @@
 \textcolor{red}{\textit{Formalizing} prediction problems.}\\
 
 \begin{itemize}
-\item \textit{Medical treatment planning:} The $\mathcal{Y}$ vector might be how much dose shall I give the patient, in that case it is continuous. On the other hand, if I am deciding which treatment, then the $\mathcal{Y}$ vector is discrete. Whereas for the $\mathcal{X}$ vector, some of the values such as age, height, or weight will be continuous and some other data will be binary such as smoker or non-smoker, sex or have allergies. Also, some of the $\mathcal{X}$ values will be ordinal such as stage of illness.
-\item \textit{Electoral campaigning:} The $\mathcal{Y}$ vector is clearly binary (i.e., yes/no). The $\mathcal{X}$ vector might be a vector with $n$ entries for each voters, each entry is a binary indicating whether the voter voted for certain party or not each year. For example if someone witnessed three elections so far and in the first two votes they voted to a different party and in the last vote they voted to our candidate's party, their vector will look like this $[0,0,1]$.
-\item \textit{Time series forecasting:} The $\mathcal{Y}$ vector is clearly continuous. The $\mathcal{X}$ vector might be a vector with mixed values. Some continuous values might be the performance of that stock lately; other binary entries might be did the company invested in new projects.
-\item \textit{Handwriting recognition:} In such case, both $\mathcal{Y}$ and $\mathcal{X}$ vectors are discrete.
-\item \textit{Class placement:} The $\mathcal{Y}$ vector is ordinal to determine the level of math class to place a student in. The $\mathcal{X}$ vector might be a continuous vector with entries proving grades of each subject.
-\item \textit{Pick your own problem:}
+\item \textit{Medical treatment planning:} The $\mathcal{Y}$ vector might be how much dose shall I give the patient, in that case it is continuous and thus $f$ itself is a simple mapping function that produces continuous values based on some input such as this $f(x)=b+a_1x_1+b_2x_2+...+b_nx_n$. On the other hand, if I am deciding which treatment, then the $\mathcal{Y}$ vector is discrete and thus $f$ itself is a piecewise function that produces certain value based on some input. Whereas for the $\mathcal{X}$ vector, some of the values such as age, height, or weight will be continuous and some other data will be binary such as smoker or non-smoker, sex or have allergies. Also, some of the $\mathcal{X}$ values will be ordinal such as stage of illness.
+\item \textit{Electoral campaigning:} The $\mathcal{Y}$ vector is clearly binary (i.e., yes/no) and thus $f$ itself is a piecewise function that produces either 1 or 0 based on some input and threshold value. The $\mathcal{X}$ vector might be a vector with $n$ entries for each voters, each entry is a binary indicating whether the voter voted for certain party or not each year. For example if someone witnessed three elections so far and in the first two votes they voted to a different party and in the last vote they voted to our candidate's party, their vector will look like this $[0,0,1]$.
+\item \textit{Time series forecasting:} The $\mathcal{Y}$ vector is clearly continuous. The $\mathcal{X}$ vector might be a vector with mixed values. Some continuous values might be the performance of that stock lately; other binary entries might be did the company invested in new projects. $f$ itself is a simple mapping function that produces continuous values based on some input such as this $f(x)=b+a_1x_1+b_2x_2+...+b_nx_n$.
+\item \textit{Handwriting recognition:} In such case, both $\mathcal{Y}$ and $\mathcal{X}$ vectors are discrete. The function $f$ is a piecewise function.
+\item \textit{Class placement:} The $\mathcal{Y}$ vector is ordinal to determine the level of math class to place a student in. The $\mathcal{X}$ vector might be a continuous vector with entries proving grades of each subject. The function $f$ is a piecewise function.
+\item \textit{Pick your own problem:} For me it would be very interesting to collect some historical data about sales of certain items at Amazon.com and the locations of demand to be able to predict future demand for those items and the corresponding demand locations. Managers in companies such as Amazon.com are interested in identifying the demand of future to enable them to stock the right quantity of products in the right warehouse position to save transportation cost. The $\mathcal{X}$ vector might be population size of each city, demand of each product over the years, and some demographic data about the cities. $\mathcal{Y}$ would be a prediction of the demand of each item in each city at each time interval. The function $f$ is a mapping function that produces continuous values.  
 \end{itemize}
 
 
@@ -159,9 +159,18 @@
 
 \vspace{0.2 in}
 
-(d) All $w$ entries are strictly positive values and $b$ is zero.
+(d) All $w$ entries might be strictly positive values and then $b$ would be zero. 
 
 
+\vspace{0.2 in}
+
+(e) \begin{itemize}
+\item[i] See \ref{fig:Mat}.
+\item[ii] See \ref{fig:Mat}.
+\item[iii] The $x$-intercept on each of $x_i$ axis is $b/w_i$.
+\item[iv] vector $w$ controls the 
+\item[v] See \ref{fig:Mat}.
+\end{itemize}
 %\begin{figure}[H]
 %\begin{minipage}[t]{.48\textwidth}
 %\centering
@@ -200,12 +209,12 @@
 %    \end{figure}
 
 
-%\begin{figure}[H]
-%\centering
-%    \includegraphics[width=400 pt]{loglog.png}
-%    \caption{Graph showing the relationship between the measured perimeter $\log(L(s))$ and %the magnification factor $\log(s)$.}
-%    \label{fig:Mat}
-%\end{figure}
+\begin{figure}[H]
+\centering
+    \includegraphics[width=400 pt]{IMG_7313.jpg}
+    \caption{Problem 2 parts (i), (ii) and (v) of (e).}
+    \label{fig:Mat}
+\end{figure}
 
 
 
