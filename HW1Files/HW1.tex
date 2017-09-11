@@ -215,8 +215,18 @@
     \caption{Problem 2 parts (i), (ii) and (v) of (e).}
     \label{fig:Mat}
 \end{figure}
+\section{Problem 2}
+\textcolor{red}{\textit{Vectors, matrices and inner products}.}\\
 
-
+\begin{itemize}
+\item After running this: $u = rand(3,1);v = rand(3,1); u'v$ the result is as follows 1*1Array $\lbrace$Float64,2$\rbrace$:
+ $0.993625$. On the other hand, running the following $x = rand(3); y = rand(3); x'*y$ provided the following result: $0.91015084477077$. The size of the former result is $(1,1)$ whereas the size of the later result is Epmty! Cearly, Julia distingushes between elements multiplications vs array multiplications. 
+\item In the case of using dot vs sum functions for vectors $u$ and $v$, the results are exactly the same, we got a scalar. Likewise, for the case of vectors $x$ and $y$. 
+\item The results I got after running A[1,:] vs A[:,1] was, surprisingly, the same. The result is always a 5-element Array. Frankly speaking, I was expecting to get a column vector and a row vectors respectively just like what you get in MATLAB! Clearly, the answer is we get vectors.
+\item sum(A[:,1].*A[1,:]) or dot(A[:,1],A[1,:]).
+\item .
+\item .  
+\end{itemize}
 
 
 
