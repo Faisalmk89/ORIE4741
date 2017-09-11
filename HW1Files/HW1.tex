@@ -113,7 +113,7 @@
 %	                 TITLE BOX
 %%%%%%%%%%%%%%%%%%%%%
 
-\Assignment{0}{Aug. 28, 2017}{\dpw}{Faisal Alkaabneh}
+\Assignment{1}{Sep. 12, 2017}{\dpw}{Faisal Alkaabneh}
 
 %%%%%%%%%%%%%%%%%%%%%
 %	             First Section
@@ -121,101 +121,6 @@
 
 
 \section{Problem 1}
-\textcolor{red}{\textit{Formalizing} prediction problems.}\\
-
-\begin{itemize}
-\item \textit{Medical treatment planning:} The $\mathcal{Y}$ vector might be how much dose shall I give the patient, in that case it is continuous and thus $f$ itself is a simple mapping function that produces continuous values based on some input such as this $f(x)=b+a_1x_1+b_2x_2+...+b_nx_n$. On the other hand, if I am deciding which treatment, then the $\mathcal{Y}$ vector is discrete and thus $f$ itself is a piecewise function that produces certain value based on some input. Whereas for the $\mathcal{X}$ vector, some of the values such as age, height, or weight will be continuous and some other data will be binary such as smoker or non-smoker, sex or have allergies. Also, some of the $\mathcal{X}$ values will be ordinal such as stage of illness.
-\item \textit{Electoral campaigning:} The $\mathcal{Y}$ vector is clearly binary (i.e., yes/no) and thus $f$ itself is a piecewise function that produces either 1 or 0 based on some input and threshold value. The $\mathcal{X}$ vector might be a vector with $n$ entries for each voters, each entry is a binary indicating whether the voter voted for certain party or not each year. For example if someone witnessed three elections so far and in the first two votes they voted to a different party and in the last vote they voted to our candidate's party, their vector will look like this $[0,0,1]$.
-\item \textit{Time series forecasting:} The $\mathcal{Y}$ vector is clearly continuous. The $\mathcal{X}$ vector might be a vector with mixed values. Some continuous values might be the performance of that stock lately; other binary entries might be did the company invested in new projects. $f$ itself is a simple mapping function that produces continuous values based on some input such as this $f(x)=b+a_1x_1+b_2x_2+...+b_nx_n$.
-\item \textit{Handwriting recognition:} In such case, both $\mathcal{Y}$ and $\mathcal{X}$ vectors are discrete. The function $f$ is a piecewise function.
-\item \textit{Class placement:} The $\mathcal{Y}$ vector is ordinal to determine the level of math class to place a student in. The $\mathcal{X}$ vector might be a continuous vector with entries proving grades of each subject. The function $f$ is a piecewise function.
-\item \textit{Pick your own problem:} For me it would be very interesting to collect some historical data about sales of certain items at Amazon.com and the locations of demand to be able to predict future demand for those items and the corresponding demand locations. Managers in companies such as Amazon.com are interested in identifying the demand of future to enable them to stock the right quantity of products in the right warehouse position to save transportation cost. The $\mathcal{X}$ vector might be population size of each city, demand of each product over the years, and some demographic data about the cities. $\mathcal{Y}$ would be a prediction of the demand of each item in each city at each time interval. The function $f$ is a mapping function that produces continuous values.  
-\end{itemize}
-
-
-
-\newpage
-
-
-\section{Problem 2}
-\textcolor{red}{Coding Experience.}
-
-\vspace{0.2 in}
-
-(a) $x^{m1}= [0;9999;9999;9999;0;9999]$
-
-\vspace{0.2 in}
-
-(b) Count the number of softwares a student wrote a code using them.
-
-\vspace{0.2 in}
-
-(c) \[ y = \begin{cases} 
-      Yes & w^Tx>b \\
-      No & o.w 
-   \end{cases}
-\]
-
-
-\vspace{0.2 in}
-
-(d) All $w$ entries might be strictly positive values and then $b$ would be zero. 
-
-
-\vspace{0.2 in}
-
-(e) \begin{itemize}
-\item[i] See \ref{fig:Mat}.
-\item[ii] See \ref{fig:Mat}.
-\item[iii] The $x$-intercept on each of $x_i$ axis is $b/w_i$.
-\item[iv] vector $w$ controls the 
-\item[v] See \ref{fig:Mat}.
-\end{itemize}
-%\begin{figure}[H]
-%\begin{minipage}[t]{.48\textwidth}
-%\centering
-%\begin{subfigure}[b]{\linewidth}
-%\includegraphics[width=0.9\hsize]{a03.png}
-%    \caption{$a = 0.30$, period-1 orbit,}
-%\end{subfigure}\\
-%\begin{subfigure}[b]{\linewidth}
-%\includegraphics[width=0.9\hsize]{a031.png}
-%    \caption{$a=0.31$, period-1 orbit,}
-%\end{subfigure}\\
-%\begin{subfigure}[b]{\linewidth}
-%\includegraphics[width=0.9\hsize]{a033.png}
-%    \caption{$a=0.33$, period-2 orbit.}
-%\end{subfigure}
-
-%\caption{Varying $a<0.34$.}
-%\label{fig:testa}
-%\end{minipage}
-%    \hfill     
-%\begin{minipage}[t]{0.48\textwidth}
-%\begin{subfigure}[b]{\linewidth}
-%\includegraphics[width=0.9\hsize]{a035.png}
-%        \caption{$a=0.35$, period-2 orbit,}
-%\end{subfigure}\\
-%\begin{subfigure}[b]{\linewidth}
-%\includegraphics[width=0.9\hsize]{a036.png}
-%    \caption{$a = 0.36$,period-2 orbit,}
-%\end{subfigure}\\
-%\begin{subfigure}[b]{\linewidth}
-% \includegraphics[width=0.9\hsize]{a039.png}
-%        \caption{$a = 0.39$, chaotic attractor.}
-%\end{subfigure}
-%\caption{Varying $a>0.35$.}
-%\end{minipage}
-%    \end{figure}
-
-
-\begin{figure}[H]
-\centering
-    \includegraphics[width=400 pt]{IMG_7313.jpg}
-    \caption{Problem 2 parts (i), (ii) and (v) of (e).}
-    \label{fig:Mat}
-\end{figure}
-\section{Problem 2}
 \textcolor{red}{\textit{Vectors, matrices and inner products}.}\\
 
 \begin{itemize}
@@ -224,10 +129,58 @@
 \item In the case of using dot vs sum functions for vectors $u$ and $v$, the results are exactly the same, we got a scalar. Likewise, for the case of vectors $x$ and $y$. 
 \item The results I got after running A[1,:] vs A[:,1] was, surprisingly, the same. The result is always a 5-element Array. Frankly speaking, I was expecting to get a column vector and a row vectors respectively just like what you get in MATLAB! Clearly, the answer is we get vectors.
 \item sum(A[:,1].*A[1,:]) or dot(A[:,1],A[1,:]).
-\item .
-\item .  
 \end{itemize}
 
+
+
+\newpage
+
+
+\section{Problem 3}
+\textcolor{red}{Perceptron.}
+
+\vspace{0.2 in}
+\begin{itemize}
+    \item[(a)] The code is displayed in Figure \ref{fig:perCode}.
+    \item[(b)] The number of steps required was 48 iterations before converging. For the plots please see Figure \ref{fig:vs}
+    \item[(c)] I noticed first that there is a significant difference between the number of steps needed to converge for the same set of data since the initial $w$ is random. Nonetheless, here are the reutls for $n= 20,100,$ and $1000$: 4, 64, and 115. Clearly as n goes up, the number of steps required for convergence goes up as well.
+    \item[(d)] 96, 500, 392, 475, 500, 500, 387, 334.
+    \item[(e)] Figure displays the number of iterations needed by the algorithm at different data points. Also Figure XX shows the code used. Note that the maximum value is 439 and the minimum is 68.
+    \item[(f)]
+    \item[()]
+\end{itemize}
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=450 pt]{perAlgo.png}
+    \caption{Problem 3 part (a).}
+    \label{fig:perCode}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=450 pt]{realvshypo.png}
+    \caption{Problem 3: $w\natural$ vs $w$ predicted.}
+    \label{fig:vs}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=450 pt]{perAlgoRand.png}
+    \caption{Problem 3: Perceptron algorithm with random pick of the next point to evaluate.}
+    \label{fig:vs}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=450 pt]{freq.png}
+    \caption{Problem 3: frequescy..........}
+    \label{fig:vs}
+\end{figure}
 
 
 \end{document}
